@@ -1,0 +1,43 @@
+Formats
+
+
+gausnw.dat
+
+	gausnw.f90
+	write(60,*) rNb, Ufb, Cox
+	write(60,*) x(i),rNx(i)
+
+	xinitt.f90
+	read(99,*)rNb,Ufb,Cox
+	read(99,*,end=2)w(i),rNw(i)
+
+
+profilnw.dat
+
+	nwcmp.for
+	write(22,'(3e15.8)')rNb,Ufb,Cox
+	write(22,'(5e15.8)')rNw(i),width(i),V(i),Fi(i),C(i)/Cox
+
+	xinit.f90
+	read(99,'(3e15.8)')rNb,Ufb,Cox
+	read(99,'(5e15.8)',end=2)rNw(i),w(i),vg(i),fi(i),c(i)
+
+
+Nnfile.dat
+
+	nncmp.f90
+	write(60,*)ipn
+	write(60,*)x(i)*rLd,rNx(i),rNNx(i)
+
+
+dcvfile.dat
+
+	ncv.f90
+	read(61,*)ip,Cox
+	read(61,*)vg(i),us,cmos(i)
+
+
+nxfile.dat
+
+	ncv.f90
+	write(61,*)w(i),rNw(i)
